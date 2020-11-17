@@ -7,9 +7,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /* Start here */
-app.get('/', (req, res) => {
-	res.redirect('/HomePage');
-});
+// app.get('/', (req, res) => {
+// 	res.redirect('/HomePage');
+// });
 
 
 
