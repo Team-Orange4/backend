@@ -9,7 +9,7 @@
     "Dev": "nodemon index",
     "Seed": "node  db/Postseeds.js",
     "dev": "nodemon index",
-    "seed": "node db/seeds/seeds.js"
+    "seed": "node db/seeds/user-seeds.js"
   },
   "keywords": [],
   "author": "",

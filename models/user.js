@@ -19,15 +19,15 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		required: false,
 	},
-	accountCreationDate: {
-		type: Date,
-		default: Date.now,
-	},
 	password: {
 		type: String,
 		require: true,
 	},
-});
+},
+{
+	timestamps: true
+}
+);
 
 const User = mongoose.model('User', UserSchema);
 
