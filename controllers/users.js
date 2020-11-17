@@ -17,6 +17,13 @@ router.post('/register', (req, res, next) => {
     .then(user => {res.status(201).send("New user added")});
 })
 
+//LOGIN --- this route will later perform Authentication and assign JWT for Authorization. For now, it is a placeholder route
+router.post('/login', (req, res, next) => {
+	res.send('login page')
+})
+
+
+
 
 
 module.exports = router;
