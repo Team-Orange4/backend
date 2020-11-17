@@ -29,6 +29,24 @@ router.post('/register', async (req, res, next) => {
 	}
 });
 
+router.post('/login', (req, res, next) => {
+	User.find({})
+		.then((users) => {
+			//    res.send(users);
+			return users.find((user) => user.email === req.body.email);
+		})
+		.then((user) => {
+            if(user.password === req.body.password){
+                res.send('LogIn Sucessful')
+            }else{
+                res.send('Incorrect Username or Password')
+            }
+			// user
+			// 	? res.status(200).send(user)
+			// 	: res.status(404).send('User not found');
+		})
+		.catch(next);
+});
 // router
 // 	.post('/login', async (req, res, next) => {
 // 		User.find({}).then((users) => {
