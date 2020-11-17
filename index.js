@@ -12,7 +12,8 @@ app.get('/', (req, res) => {
 });
  const postCts=require('./controllers/posts')
  app.use('/posts',postCts)
-
+const comCts=require('./controllers/comments')
+app.use('/comments',comCts)
 
 /* end Here */
 app.use((err, req, res, next) => {
