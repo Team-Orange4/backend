@@ -11,7 +11,8 @@ router.get('/', (req, res, next) => {
 		.catch(next);
 });
 
-router.post('/', (req, res, next) => {
+//this might be at address of .../register
+router.post('/register', (req, res, next) => {
     User.create(req.body)
     .then(user => {res.status(201).send("New user added")});
 })
