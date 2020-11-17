@@ -11,6 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 // 	res.redirect('/HomePage');
 // });
 
+const usersController = require('./controllers/users');
+app.use('/api/users', usersController);
 
 
 /* end Here */
