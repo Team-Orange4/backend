@@ -8,9 +8,10 @@ app.use(express.urlencoded({ extended: true }));
 
 /* Start here */
 app.get('/', (req, res) => {
-	res.redirect('/HomePage');
+	res.redirect('/posts');
 });
-
+ const postCts=require('./controllers/posts')
+ app.use('/posts',postCts)
 
 
 /* end Here */
