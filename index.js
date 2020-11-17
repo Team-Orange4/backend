@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 // });
 
 const usersController = require('./controllers/users');
-app.use('/api/users', usersController);
+app.use('/users', usersController);
 
 
 /* end Here */

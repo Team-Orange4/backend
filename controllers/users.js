@@ -17,4 +17,6 @@ router.post('/register', (req, res, next) => {
     .then(user => {res.status(201).send("New user added")});
 })
 
+
+
 module.exports = router;
