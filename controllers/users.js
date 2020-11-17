@@ -23,6 +23,9 @@ router
 	.post('/login', (req, res, next) => {
 		res.send('login page');
 	})
+
+//Edit User Info
+router.put('/:')
 	
 
 //DELETE USER --- this will require authorization later so users can only delete their account.
