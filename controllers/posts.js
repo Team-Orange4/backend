@@ -15,5 +15,6 @@ router.get('/', (req, res, next) => {
      .then((post)=>res.status(201).json(post))
      .catch(next)
  })
+ 
 
 module.exports=router
