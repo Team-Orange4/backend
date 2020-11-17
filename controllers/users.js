@@ -32,18 +32,25 @@ router.post('/register', async (req, res, next) => {
 router.post('/login', (req, res, next) => {
 	User.find({})
 		.then((users) => {
-			//    res.send(users);
 			return users.find((user) => user.email === req.body.email);
 		})
-		.then((user) => {
-            if(user.password === req.body.password){
-                res.send('LogIn Sucessful')
-            }else{
-                res.send('Incorrect Username or Password')
-            }
-			// user
-			// 	? res.status(200).send(user)
-			// 	: res.status(404).send('User not found');
+		.then(async (user) => {
+			if(user){
+				if(await bcrypt.compare(req.body.password, user.password)){
+					 res.send('LogIn Sucessful')
+				}else{
+					res.send('Incorrect Username or Password')
+				}
+			}else{
+					res.status(404).send('User not found');
+				}
+            // if(!user){
+            //     res.status(404).send('User not found')
+            // }else if(user.password === req.body.password){
+            //     res.send('LogIn Sucessful')
+            // }else{
+            //     res.send('Incorrect Username or Password')
+            // }
 		})
 		.catch(next);
 });
