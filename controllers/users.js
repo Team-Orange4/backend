@@ -11,19 +11,29 @@ router.get('/', (req, res, next) => {
 		.catch(next);
 });
 
-//this might be at address of .../register
+//NEW USER REGISTRATION
 router.post('/register', (req, res, next) => {
-    User.create(req.body)
-    .then(user => {res.status(201).send("New user added")});
-})
+	User.create(req.body).then((user) => {
+		res.status(201).send('New user added');
+	});
+});
 
 //LOGIN --- this route will later perform Authentication and assign JWT for Authorization. For now, it is a placeholder route
-router.post('/login', (req, res, next) => {
-	res.send('login page')
-})
+router
+	.post('/login', (req, res, next) => {
+		res.send('login page');
+	})
+	
 
-
-
-
+//DELETE USER --- this will require authorization later so users can only delete their account.
+router
+	.delete('/:id', (req, res, next) => {
+		User.findByIdAndDelete(req.params.id)
+			.then((user) => {
+				res.json(user)
+			})
+			.catch(next)
+	})
+	
 
 module.exports = router;
