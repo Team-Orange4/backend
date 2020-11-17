@@ -29,4 +29,19 @@ router.post('/register', async (req, res, next) => {
 	}
 });
 
+// router
+// 	.post('/login', async (req, res, next) => {
+// 		User.find({}).then((users) => {
+// 			if (users) {
+// 				res.send('We have all the users');
+// 			} else {
+// 				res.status(401).send('cannot find users');
+// 			}
+//         })
+//         .catch(next)
+// 	})
+	
+
 module.exports = router;
+
+//Attribution: Kyle Cook from Web Dev Simplified for how to use bcrypt for basic hashing and auth
