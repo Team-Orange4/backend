@@ -1,0 +1,21 @@
+{
+    "firstName": "David",
+    "lastName": "Williams",
+    "email": "dwilliams@me.com",
+    "phoneNumber": "778-362-7256",
+    "password": "fishsticks78"
+},
+{
+    "firstName": "Ryan",
+    "lastName": "Smith",
+    "email": "rsmith@me.com",
+    "phoneNumber": "700-399-7000",
+    "password": "password1234"
+},
+{
+    "firstName": "Sam",
+    "lastName": "Thomas",
+    "email": "sam.thomas@me.com",
+    "phoneNumber": "778-558-7346",
+    "password": "qwerty"
+}

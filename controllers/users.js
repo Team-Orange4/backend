@@ -11,4 +11,9 @@ router.get('/', (req, res, next) => {
 		.catch(next);
 });
 
+router.post('/', (req, res, next) => {
+    User.create(req.body)
+    .then(user => {res.status(201).send("New user added")});
+})
+
 module.exports = router;
