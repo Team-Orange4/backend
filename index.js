@@ -13,6 +13,11 @@ app.use(express.urlencoded({ extended: true }));
 
 const usersController = require('./controllers/users');
 app.use('/users', usersController);
+app.get('/', (req, res) => {
+	res.redirect('/posts');
+});
+ const postCts=require('./controllers/posts')
+ app.use('/posts',postCts)
 
 
 /* end Here */
