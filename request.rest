@@ -1,0 +1,14 @@
+GET http://localhost:8000/api/users
+
+###
+
+POST http://localhost:8000/api/users/register
+Content-Type: application/json
+
+{
+    "firstName": "Testerson",
+    "lastName": "Megee",
+    "email": "test@me.com",
+    "phoneNumber": "778-362-7256",
+    "password": "cat"
+}
