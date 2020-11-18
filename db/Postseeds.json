@@ -1,0 +1,45 @@
+[
+    {
+        "_id": "5fb42856645af59d2afaa296",
+        "title": "FirstPost",
+        "body": "Hey from nick",
+        "comments": [
+            {
+                "_id": "5fb42d358fc479a3234a3cb0",
+                "title": "Test1",
+                "body": "Hello",
+                "createdAt": "2020-11-17T20:06:13.741Z",
+                "updatedAt": "2020-11-17T20:06:13.741Z"
+            },
+            {
+                "_id": "5fb42d508fc479a3234a3cb1",
+                "title": "Test2",
+                "body": "Hello!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+                "createdAt": "2020-11-17T20:06:40.285Z",
+                "updatedAt": "2020-11-17T20:06:40.285Z"
+            }
+        ],
+        "createdAt": "2020-11-17T19:45:26.867Z",
+        "updatedAt": "2020-11-17T20:06:40.286Z",
+        "__v": 2
+    },
+    {
+        "_id": "5fb42addeb6d55a0d6632d86",
+        "title": "SecondPost Title",
+        "body": "Hey this is the body of the 2nd Post",
+        "comments": [
+            {
+                "_id": "5fb42addeb6d55a0d6632d87",
+                "title": "Title of comment from 2nd post",
+                "body": "Hey You!!!!!!!",
+                "createdAt": "2020-11-17T19:56:13.894Z",
+                "updatedAt": "2020-11-17T19:56:13.894Z"
+            }
+        ],
+        "createdAt": "2020-11-17T19:56:13.895Z",
+        "updatedAt": "2020-11-17T19:56:13.895Z",
+        "__v": 0
+    }
+    
+    
+]
