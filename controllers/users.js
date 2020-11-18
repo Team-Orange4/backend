@@ -1,8 +1,13 @@
+require('dotenv').config();
 const { Router } = require('express');
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
+app = express();
+app.use(express.json());
 
 //SHOW all users ****THIS ROUTE IS JUST FOR DEV. WILL NOT BE IN PRODUCTION
 router.get('/', (req, res, next) => {
@@ -35,38 +40,26 @@ router.post('/login', (req, res, next) => {
 			return users.find((user) => user.email === req.body.email);
 		})
 		.then(async (user) => {
-			if(user){
-				if(await bcrypt.compare(req.body.password, user.password)){
-					 res.send('LogIn Sucessful')
-				}else{
-					res.send('Incorrect Username or Password')
+			if (user) {
+				if (await bcrypt.compare(req.body.password, user.password)) {
+					// Attribution for user.toJSON() to Nipek from Stack Overflow @ https://stackoverflow.com/questions/52781477/expected-payload-to-be-a-plain-object-mean. This changes the plan text to json so it can then be used by jwt and resturned as json in a later line.
+					const accessToken = jwt.sign(
+						user.toJSON(),
+						process.env.ACCESS_TOKEN_SECRET
+					);
+					res.json({ accessToken: accessToken });
+				} else {
+					res.send('Incorrect Username or Password');
 				}
-			}else{
-					res.status(404).send('User not found');
-				}
-            // if(!user){
-            //     res.status(404).send('User not found')
-            // }else if(user.password === req.body.password){
-            //     res.send('LogIn Sucessful')
-            // }else{
-            //     res.send('Incorrect Username or Password')
-            // }
+			} else {
+				res.status(404).send('User not found');
+				//this line is for dev only. We do not want to have a seperate return if emails do not exist vs if passwords are incorrect. This could be a vuln that allows malicious people to find out if emails have acounts.
+			}
 		})
 		.catch(next);
 });
-// router
-// 	.post('/login', async (req, res, next) => {
-// 		User.find({}).then((users) => {
-// 			if (users) {
-// 				res.send('We have all the users');
-// 			} else {
-// 				res.status(401).send('cannot find users');
-// 			}
-//         })
-//         .catch(next)
-// 	})
-	
+
 
 module.exports = router;
 
-//Attribution: Kyle Cook from Web Dev Simplified for how to use bcrypt for basic hashing and auth
+//Attribution: Kyle Cook from Web Dev Simplified for how to use bcrypt for basic hashing and authorization though JWT

@@ -1,7 +1,25 @@
 GET http://localhost:8000/users
 
 ###
+POST http://localhost:8000/users/login
+Content-Type: application/json
 
+ {
+   "email": "test@me.com",
+    "password": "cat"
+ }
+
+###
+
+POST http://localhost:8000/users/login
+Content-Type: application/json
+
+ {
+   "email": "swilliams@me.com",
+    "password": "llama"
+ }
+
+###
 POST http://localhost:8000/users/register
 Content-Type: application/json
 
@@ -9,6 +27,6 @@ Content-Type: application/json
     "firstName": "Testerson",
     "lastName": "Megee",
     "email": "test@me.com",
-    "phoneNumber": "778-362-7256",
+    "username": "testertheman",
     "password": "cat"
 }
