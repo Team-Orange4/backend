@@ -27,5 +27,19 @@ router.delete('/:id', (req, res, next) => {
 		.catch(next);
 });
 
+router.patch('/:id', (req, res, next) => {
+	const id = req.params.id;
+	const commentData = req.body;
 
+	Post.findOne({
+		'reviews._id': id,
+	})
+		.then((post) => {
+			const comment = post.comments.id(id);
+			comment.set(commentData);
+			return post.save();
+		})
+		.then(() => res.sendStatus(204))
+		.catch(next);
+});
 module.exports = router;
