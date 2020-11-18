@@ -20,10 +20,6 @@ app.get('/', (req, res) => {
  app.use('/posts',postCts)
 const comCts=require('./controllers/comments')
 app.use('/comments',comCts)
-// app.get('/', (req, res) => {
-// 	res.redirect('/HomePage');
-// });
-
 
 
 /* end Here */
