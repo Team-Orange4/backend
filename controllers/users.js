@@ -14,9 +14,11 @@ router.get('/', (req, res, next) => {
 
 //NEW USER REGISTRATION /users/register
 router.post('/register', (req, res, next) => {
-	User.create(req.body).then((user) => {
-		res.status(201).send('New user added');
-	});
+	User.create(req.body)
+	.then((user) => {
+		res.status(201).json(user);
+	})
+	.catch(next)
 });
 
 //LOGIN @ /uses/login this route will later perform Authentication and assign JWT for Authorization. For now, it is a placeholder route
@@ -30,7 +32,7 @@ router.put('/:id', (req, res, next) => {
 	const id = req.params.id;
 	User.findOneAndUpdate({_id: id}, req.body, {new: true})
 	.then(user => {
-		res.json(user)
+		res.status(201).json(user)
 	})
 	.catch(next)
 })
@@ -41,7 +43,7 @@ router
 	.delete('/:id', (req, res, next) => {
 		User.findByIdAndDelete(req.params.id)
 			.then((user) => {
-				res.json(user)
+				res.sendStatus(204)
 			})
 			.catch(next)
 	})
