@@ -9,6 +9,7 @@ const jwt = require('jsonwebtoken');
 app = express();
 app.use(express.json());
 
+<<<<<<< HEAD
 //SHOW all users ****THIS ROUTE IS JUST FOR DEV. WILL NOT BE IN PRODUCTION
 router.get('/', (req, res, next) => {
 	// User.find({})
@@ -17,12 +18,37 @@ router.get('/', (req, res, next) => {
 	// 	})
 	// 	.catch(next)
 	// })
+=======
+router.get('/', authToken, (req, res, next) => {
+>>>>>>> Auth added for GET returning only logged in user info
 	User.find({})
-		.then((users) => {
-			res.json(users);
+		.then(users => {
+			return users.find(user => user.email === req.user.email)
+			// console.log(users[0].email);
+			// console.log(req.user.email);
+			// users.find(user => user.email === req.body.email)
 		})
-		.catch(next);
+		.then(user => {
+			console.log(user)
+			res.json(user)
+		})
+		// .then(user => {
+		// 	console.log(user);
+		// 	if(user){
+		// 		res.json(user)
+		// 	}else{
+		// 		res.status(401).json('Please log in to view this page')
+		// 	}
+		// })
+		.catch(next)
 	})
+	
+	// User.find({})
+	// 	.then((users) => {
+	// 		res.json(users);
+	// 	})
+	// 	.catch(next);
+	// })
 
 
 //this might be at address of .../register

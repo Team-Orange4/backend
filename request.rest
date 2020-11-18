@@ -1,5 +1,10 @@
 GET http://localhost:8000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI1NzA3Njk0ZjgwOTUxM2FlYzNmNDAiLCJmaXJzdE5hbWUiOiJUZXN0ZXJzb24iLCJsYXN0TmFtZSI6Ik1lZ2VlIiwiZW1haWwiOiJ0ZXN0QG1lLmNvbSIsInVzZXJuYW1lIjoidGVzdGVydGhlbWFuIiwicGFzc3dvcmQiOiIkMmIkMTAkc2F1eTN3M2I0dW41REhCWERQR0tKLkhCWjVzNkYxWUtDeVVLUE1JS0tqSTRhMXdRSWtzQ20iLCJhY2NvdW50Q3JlYXRpb25EYXRlIjoiMjAyMC0xMS0xOFQxOTowNToyNi45NTZaIiwiX192IjowLCJpYXQiOjE2MDU3MjY4MDl9.4_x53ryLhSpoXGmE2b0_Kam9X-F_-O0Wf0Y7d9BTiIU
 
+###
+
+GET http://localhost:8000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI1NzU0OWJlMTU3MzVkMDNhMzdjOWYiLCJmaXJzdE5hbWUiOiJTdGV2ZSIsImxhc3ROYW1lIjoiV2lsbGlhbXMiLCJlbWFpbCI6InN3aWxsaWFtc0BtZS5jb20iLCJ1c2VybmFtZSI6InN0ZXZleXBldmUiLCJwYXNzd29yZCI6IiQyYiQxMCRvVFYueXgxb1ZTQ3FHM1ZGZWZIVWoubXRFVndJLjhOUUYydkJZTEEub05IZWNtdFl6ck50UyIsImFjY291bnRDcmVhdGlvbkRhdGUiOiIyMDIwLTExLTE4VDE5OjI2OjAxLjA0OFoiLCJfX3YiOjAsImlhdCI6MTYwNTcyNzU3Mn0.TEumM5H3RBmNvqQu3TIklMLHT_7nsAgin4UN_YpYkJI
 
 ###
 POST http://localhost:8000/users/login
@@ -30,4 +35,16 @@ Content-Type: application/json
     "email": "test@me.com",
     "username": "testertheman",
     "password": "cat"
+}
+
+###
+POST http://localhost:8000/users/register
+Content-Type: application/json
+
+{
+    "firstName": "Steve",
+    "lastName": "Williams",
+    "email": "swilliams@me.com",
+    "username": "steveypeve",
+    "password": "llama"
 }
