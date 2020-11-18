@@ -11,12 +11,19 @@ app.use(express.json());
 
 //SHOW all users ****THIS ROUTE IS JUST FOR DEV. WILL NOT BE IN PRODUCTION
 router.get('/', (req, res, next) => {
+	// User.find({})
+	// 	.then(users => {
+	// 		users.filter(user => user.body.email === req.user.email)
+	// 	})
+	// 	.catch(next)
+	// })
 	User.find({})
 		.then((users) => {
 			res.json(users);
 		})
 		.catch(next);
-});
+	})
+
 
 //this might be at address of .../register
 router.post('/register', async (req, res, next) => {
@@ -59,7 +66,18 @@ router.post('/login', (req, res, next) => {
 		.catch(next);
 });
 
+function authToken(req, res, next) {
+	const authHeader = req.headers['authorization'];
+	const token = authHeader && authHeader.split(" ")[1];
+	if(token == null) return res.send("no token")
+
+	jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+		if(err) return res.send("no access but has token")
+		req.user = user
+		next()
+	})
+}
 
 module.exports = router;
 
-//Attribution: Kyle Cook from Web Dev Simplified for how to use bcrypt for basic hashing and authorization though JWT
+// Attribution: Kyle Cook from Web Dev Simplified for how to use bcrypt for basic hashing and authorization though JWT
