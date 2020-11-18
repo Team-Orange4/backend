@@ -7,6 +7,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /* Start here */
+// app.get('/', (req, res) => {
+// 	res.redirect('/HomePage');
+// });
+
+const usersController = require('./controllers/users');
+app.use('/users', usersController);
 app.get('/', (req, res) => {
 	res.redirect('/posts');
 });
@@ -14,6 +20,7 @@ app.get('/', (req, res) => {
  app.use('/posts',postCts)
 const comCts=require('./controllers/comments')
 app.use('/comments',comCts)
+
 
 /* end Here */
 app.use((err, req, res, next) => {
