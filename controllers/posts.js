@@ -1,6 +1,9 @@
 require('dotenv').config();
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const authToken = require('../authToken');
+app = express();
+app.use(express.json());
 
 const router = express.Router();
 
@@ -17,7 +20,7 @@ router.get('/:id', (req, res, next) => {
 		.then((post) => res.json(post))
 		.catch(next);
 });
- router.post('/',(req,res,next)=>{
+ router.post('/', authToken, (req,res,next)=>{
      const postData=req.body
      Posts.create(postData)
      .then((post)=>res.status(201).json(post))

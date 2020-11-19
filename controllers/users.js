@@ -22,7 +22,7 @@ router.get('/', authToken, (req, res, next) => {
 		.catch(next);
 });
 
-//this might be at address of .../register
+//REGISTER @ /users/register
 router.post('/register', async (req, res, next) => {
 	try {
 		const salt = await bcrypt.genSalt();
