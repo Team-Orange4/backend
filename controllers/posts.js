@@ -21,7 +21,6 @@ router.get('/:id', (req, res, next) => {
 		.catch(next);
 });
 router.post('/', authToken, (req, res, next) => {
-	console.log(req.user._id);
 	const postData = req.body;
 	Posts.create({
 		...postData,
