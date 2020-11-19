@@ -1,19 +1,27 @@
 const express = require('express');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
+const authToken = require('../authToken');
 
 const Post = require('./../models/post');
 
-router.post('/:id', (req, res, next) => {
+router.post('/:id', authToken, (req, res, next) => {
 	const commentData = req.body;
 
 	Post.findById(req.params.id)
 		.then((post) => {
-			post.comments.push(commentData);
+			post.comments.push({
+				...commentData,
+				owner: {
+					ownerId: req.user._id,
+					username: req.user.username,
+				},
+			});
 
 			return post.save();
 		})
 
-		.then((posts) => res.status(201).json({ posts })) 
+		.then((posts) => res.status(201).json({ posts }))
 		.catch(next);
 });
 router.delete('/:id', (req, res, next) => {
