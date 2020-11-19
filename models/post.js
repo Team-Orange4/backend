@@ -16,7 +16,10 @@ const PostSchema = new mongoose.Schema(
 
 			ref: 'User',
 		},
-		owner: String,
+		owner: {
+			ownerId: String,
+			username: String
+		},
 		comments:[commentSchema]
 		
 	},
