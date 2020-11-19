@@ -1,11 +1,11 @@
 require('dotenv').config();
-const { Router } = require('express');
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { get } = require('mongoose');
+const authToken = require('../authToken')
+
 
 app = express();
 app.use(express.json());
@@ -62,19 +62,6 @@ router.post('/login', (req, res, next) => {
 		})
 		.catch(next);
 });
-
-function authToken(req, res, next) {
-	const authHeader = req.headers['authorization'];
-	const token = authHeader && authHeader.split(' ')[1];
-	if (token == null) return res.send('no token');
-
-	jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-		if (err) return res.send('no access but has token');
-		req.user = user;
-		next();
-	});
-}
-
 
 ///DEV ONLY ROUTES DELETE BEFORE DEPLOYMENT **START**
 router.get('/all', (req, res, next) => {
