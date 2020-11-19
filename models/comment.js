@@ -2,9 +2,6 @@ const mongoose = require('../db/connection');
 
 const commentSchema = new mongoose.Schema(
 	{
-		title: {
-			type: String,
-		},
 		body: {
 			type: String,
 		},
