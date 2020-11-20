@@ -36,7 +36,7 @@ router.post('/register', async (req, res, next) => {
 		res.status(500);
 	}
 });
-
+//LOGIN @ /users/login
 router.post('/login', (req, res, next) => {
 	User.find({})
 		.then((users) => {
@@ -50,13 +50,12 @@ router.post('/login', (req, res, next) => {
 						user.toJSON(),
 						process.env.ACCESS_TOKEN_SECRET
 					);
-					res.json({ accessToken: accessToken, id: user._id });
+					res.status(200).json({ accessToken: accessToken, id: user._id });
 				} else {
-					res.send('Incorrect Username or Password');
+					res.status(401).send('Incorrect Username or Password');
 				}
 			} else {
-				res.status(404).send('User not found');
-				//this line is for dev only. We do not want to have a seperate return if emails do not exist vs if passwords are incorrect. This could be a vuln that allows malicious people to find out if emails have acounts.
+				res.status(401).send('Incorrect Username or Password');
 			}
 		})
 		.catch(next);
@@ -65,7 +64,7 @@ router.post('/login', (req, res, next) => {
 ///DEV ONLY ROUTES DELETE BEFORE DEPLOYMENT **START**
 router.get('/all', (req, res, next) => {
 	User.find({})
-		.then((users) => res.json(users))
+		.then((users) => res.status(200).json(users))
 		.catch(next);
 });
 
