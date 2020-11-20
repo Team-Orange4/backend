@@ -1,45 +1,49 @@
 [
-    {
-        "_id": "5fb42856645af59d2afaa296",
-        "title": "FirstPost",
-        "body": "Hey from nick",
-        "comments": [
-            {
-                "_id": "5fb42d358fc479a3234a3cb0",
-                "title": "Test1",
-                "body": "Hello",
-                "createdAt": "2020-11-17T20:06:13.741Z",
-                "updatedAt": "2020-11-17T20:06:13.741Z"
-            },
-            {
-                "_id": "5fb42d508fc479a3234a3cb1",
-                "title": "Test2",
-                "body": "Hello!!!!!!!!!!!!!!!!!!!!!!!!!!!",
-                "createdAt": "2020-11-17T20:06:40.285Z",
-                "updatedAt": "2020-11-17T20:06:40.285Z"
-            }
-        ],
-        "createdAt": "2020-11-17T19:45:26.867Z",
-        "updatedAt": "2020-11-17T20:06:40.286Z",
-        "__v": 2
-    },
-    {
-        "_id": "5fb42addeb6d55a0d6632d86",
-        "title": "SecondPost Title",
-        "body": "Hey this is the body of the 2nd Post",
-        "comments": [
-            {
-                "_id": "5fb42addeb6d55a0d6632d87",
-                "title": "Title of comment from 2nd post",
-                "body": "Hey You!!!!!!!",
-                "createdAt": "2020-11-17T19:56:13.894Z",
-                "updatedAt": "2020-11-17T19:56:13.894Z"
-            }
-        ],
-        "createdAt": "2020-11-17T19:56:13.895Z",
-        "updatedAt": "2020-11-17T19:56:13.895Z",
-        "__v": 0
-    }
-    
-    
+	{
+		"title": "WE ARE ALL ON ZOOM",
+		"body": "HEY!!!!",
+		"comments": [
+			{
+				"_id": "5fb6a8d709f8e0fc7581ae19",
+				"body": "No more comment titles!!!??",
+				"owner": {
+					"ownerId": "5fb6a8aa09f8e0fc7581ae18",
+					"username": "testertheman"
+				},
+				"createdAt": "2020-11-19T17:18:15.560Z",
+				"updatedAt": "2020-11-19T17:18:15.560Z"
+			}
+		],
+		"owner": {
+			"ownerId": "5fb6921609f8e0fc7581ae15",
+			"username": "steveypeve"
+		}
+	},
+	{
+		"title": "Llamas are awesome?",
+		"body": "Llamas are animals with super powers. The have fur the smells and have four legs. That pretty rad right?",
+		"comments": [],
+		"owner": {
+			"ownerId": "5fb6a8aa09f8e0fc7581ae18",
+			"username": "testertheman"
+		}
+	},
+	{
+		"title": "Do Aliens Exist",
+		"body": "I mean maybe but why havent they said hello yet? Are they just rude?",
+		"comments": [],
+		"owner": {
+			"ownerId": "5fb6a8aa09f8e0fc7581ae18",
+			"username": "testertheman"
+		}
+	},
+	{
+		"title": "Pet Turtle",
+		"body": "I have multiple pet turtles in the bath tub. Is that normal? I think so!",
+		"comments": [],
+		"owner": {
+			"ownerId": "5fb6a8aa09f8e0fc7581ae18",
+			"username": "testertheman"
+		}
+	}
 ]

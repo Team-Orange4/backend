@@ -4,8 +4,7 @@ const router = express.Router();
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const authToken = require('../authToken')
-
+const authToken = require('../authToken');
 
 app = express();
 app.use(express.json());
@@ -51,7 +50,7 @@ router.post('/login', (req, res, next) => {
 						user.toJSON(),
 						process.env.ACCESS_TOKEN_SECRET
 					);
-					res.json({ accessToken: accessToken });
+					res.json({ accessToken: accessToken, id: user._id });
 				} else {
 					res.send('Incorrect Username or Password');
 				}
@@ -66,12 +65,11 @@ router.post('/login', (req, res, next) => {
 ///DEV ONLY ROUTES DELETE BEFORE DEPLOYMENT **START**
 router.get('/all', (req, res, next) => {
 	User.find({})
-		.then(users => res.json(users))
-		.catch(next)
-})
+		.then((users) => res.json(users))
+		.catch(next);
+});
 
 ///DEV ONLY ROUTES DELETE BEFORE DEPLOYMENT **END**
-
 
 module.exports = router;
 

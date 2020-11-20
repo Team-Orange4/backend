@@ -4,16 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-
     "dev": "nodemon index",
-    "seed": "node db/seeds/seeds.js",
+    "seed": "node db/seeds/user-seeds.js",
     "Dev": "nodemon index",
-    "Seed": "node  db/Postseeds.js",
-    "dev": "nodemon index",
-    "seed": "node db/seeds/user-seeds.js"
-
-
-
+    "Seed": "node  db/Postseeds.js"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +19,6 @@
     "express": "^4.17.1",
     "mongoose": "^5.10.14",
     "nodemon": "^2.0.6",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.10.14"
+    "jsonwebtoken": "^8.5.1"
   }
 }
