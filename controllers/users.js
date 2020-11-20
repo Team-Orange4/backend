@@ -61,12 +61,6 @@ router.post('/login', (req, res, next) => {
 		.catch(next);
 });
 
-///DEV ONLY ROUTES DELETE BEFORE DEPLOYMENT **START**
-router.get('/all', (req, res, next) => {
-	User.find({})
-		.then((users) => res.status(200).json(users))
-		.catch(next);
-});
 
 module.exports = router;
 
