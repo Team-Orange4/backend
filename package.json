@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index",
-    "seed-users": "node db/seeds/user-seeds.js",
-    "seed-posts": "node  db/Postseeds.js"
+     "start": "node index.js"
   },
   "keywords": [],
   "author": "",
