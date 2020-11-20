@@ -68,8 +68,6 @@ router.get('/all', (req, res, next) => {
 		.catch(next);
 });
 
-///DEV ONLY ROUTES DELETE BEFORE DEPLOYMENT **END**
-
 module.exports = router;
 
 // Attribution: Kyle Cook from Web Dev Simplified for how to use bcrypt for basic hashing and authorization though JWT
