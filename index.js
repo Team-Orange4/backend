@@ -7,9 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /* Start here */
-// app.get('/', (req, res) => {
-// 	res.redirect('/HomePage');
-// });
+
 
 const usersController = require('./controllers/users');
 app.use('/users', usersController);
