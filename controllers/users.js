@@ -15,7 +15,7 @@ router.get('/', authToken, (req, res, next) => {
 			return users.find((user) => user.email === req.user.email);
 		})
 		.then((user) => {
-			console.log(user);
+			
 			res.json(user);
 		})
 		.catch(next);
@@ -26,8 +26,8 @@ router.post('/register', async (req, res, next) => {
 	try {
 		const salt = await bcrypt.genSalt();
 		const hashedPassword = await bcrypt.hash(req.body.password, salt);
-		console.log(salt);
-		console.log(hashedPassword);
+		
+		
 
 		User.create({ ...req.body, password: hashedPassword }).then((user) => {
 			res.status(201).send('New user added');
