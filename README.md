@@ -22,8 +22,8 @@ Orange is social media platform that allows users to share what they are thinkin
 
 
 ## Deployment Link
-Frontend: http://team-orange4.herokuapp.com
-Backend: http://orange-backend.herokuapp.com
+- Frontend: http://team-orange4.herokuapp.com
+- Backend: http://orange-backend.herokuapp.com
 
 ## MongoDB
 ### Why Mongodb
@@ -50,6 +50,10 @@ Json Web Tokens, JWT, and sessions are great solutions to some of the issues the
 ### Passwords and Bycrpt
 This should be pretty obvious but **it is not responsible or acceptable to store users passwords in plain text.** Great tools like bcrypt exist that can relatively quickly hash passwords. Data breaches happen daily.  Their is no justifiable reason to put your users and company at risk by storing plain text passwords. Hashing and requiring a password of a minimum length and complexity are easy to implement and greatly increase security for your users.
 
+## Challanges Faced
+##### some of the challanges we face are in the above documentation. Bellow are some other notable issues we overcame.
+- Having a fully remote team
+It was initially tricky to coordinate and scheduled everything remotely. We relied heavily upon slack and zoom. Our solution was to over communicate. At the start we asked tons of questions for clarification, role assignment, structures, time frames, etc. Having good open lines of communication was invaluable.  **PRO TIP** we discovered if a member of your group has not hosted many calls on zoom, zoom will likely upgrade the call to more or unlimited minutes if they are the host. This got us through the entire week with a team of four.
 
 
 ## Some Wanted/Needed Additions 
