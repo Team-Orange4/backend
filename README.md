@@ -17,11 +17,13 @@ Orange is social media platform that allows users to share what they are thinkin
 - Bcrypt
 - JWT
 - MongoDB
+- MongoDB Atlas
 - Mongoose 
 
 
 ## Deployment Link
-http://team-orange4.herokuapp.com/
+Frontend: http://team-orange4.herokuapp.com
+Backend: http://orange-backend.herokuapp.com
 
 ## MongoDB
 ### Why Mongodb
@@ -38,7 +40,7 @@ We chose to use MongoDB, a schema-less NoSQL database, as our database because o
 No only did we need authentication and authorization to help secure site features, we also needed it to connect users actions on the site with their account. HTTP protocol like UDP protocol is stateless. This means the client and server sides are completely in-depended. The server does not keep track of anything happening on the client side and vice versa. If the client want the server to know any unique information about the client, it must be sent over in the HTTP request. This is one reason we needed authentication. **By storing some piece of information on the client side** and sending it to the server side on every request, **we are able to determine what user performed the action**. With out this we would not have an effective or practical way to tie users to the comments they made. 
 
 ### Json Web Tokens VS Session
-Json Web Tokens, JWT, and sessions are great solutions to some of the issues the HTTP stateless protocol create **We chose JWT over sessions because** it **does not require storing any information on the server.** The JWT tokens themselves **hold all the information about the user within the token itself.** This means multiple servers/platforms can validate one token if they have the same key. Also if you accidentally publish your JWT to a public site like we did, you can simply create a new key and remove the old key. This invalidates all previous token!  JWT tokens are also resistant to tampering. The data content is used to create the token, so if the data is modified the token is no-longer valid. All these pluses are great but like anything their are some draw backs. If any one got a hold of your JWT token they could decrypt it with something like https://jwt.io/ and reveal all the information it stored. One plus of the session based approach is that it can add an extra layer of privacy. Instead of storing all the info on the client side. An Id can be stored on the client side that is used to query a db on the server. If someone retrieved a session id it itself contains little or no direct info about the user. Either way this leads us to the next section! DON'T STORE PLAIN TEXT PASSWORDS IN YOUR DB!
+Json Web Tokens, JWT, and sessions are great solutions to some of the issues the HTTP stateless protocol create **We chose JWT over sessions because** it **does not require storing any information on the server.** The JWT tokens themselves **hold all the information about the user within the token itself.** This means multiple servers/platforms can validate one token if they have the same key. Also if you accidentally publish your JWT to a public site like we did, you can simply create a new key and remove the old key. This invalidates all previous token!  **JWT tokens are also resistant to tampering.** The data content is used to create the token, so if the data is modified the token is no-longer valid. All these pluses are great but like anything **there are some draw backs.** If any one got a hold of your JWT token they **could decrypt it with something like https://jwt.io/ and reveal all the information it stored.** One plus of the session based approach is that it can add an extra layer of privacy. Instead of storing all the info on the client side. An Id can be stored on the client side that is used to query a db on the server. If someone retrieved a session id it itself contains little or no direct info about the user. Either way this leads us to the next section! **DON'T STORE PLAIN TEXT PASSWORDS IN YOUR DB!**
 
 ![image](https://user-images.githubusercontent.com/71715721/100012813-dfa43f80-2da1-11eb-9314-633698426586.png)
  * *image from jwt.io*
@@ -70,7 +72,7 @@ All contributions are appreciated!
 4. Await merge or revision request!
 
 ## Many Thanks to: 
-- General Assembly and their amazing instructors and IAs for helping us in our software engineering journey! You are all fantastic and we have enjoyed every step of the process. I don't know how you GA retain such amazing staff! https://generalassemb.ly/
+- General Assembly and their **amazing instructors and IAs** for helping us in our software engineering journey! You are all fantastic and we have enjoyed every step of the process. I don't know how you GA retain such amazing staff! https://generalassemb.ly/
 - Github for being a invaluable resource to the open source community
 - Countless other developers on quora, stack-overflow, YouTube, etc! Keep on contributing. It is appreciated. 
 
