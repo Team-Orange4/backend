@@ -52,8 +52,11 @@ This should be pretty obvious but **it is not responsible or acceptable to store
 
 ## Challanges Faced
 ##### some of the challanges we face are in the above documentation. Bellow are some other notable issues we overcame.
-- Having a fully remote team
-It was initially tricky to coordinate and scheduled everything remotely. We relied heavily upon slack and zoom. Our solution was to over communicate. At the start we asked tons of questions for clarification, role assignment, structures, time frames, etc. Having good open lines of communication was invaluable.  **PRO TIP** we discovered if a member of your group has not hosted many calls on zoom, zoom will likely upgrade the call to more or unlimited minutes if they are the host. This got us through the entire week with a team of four.
+* Having a fully remote team
+  * It was initially tricky to coordinate and scheduled everything remotely. We relied heavily upon slack and zoom. Our solution was to over communicate. At the start we asked tons of questions for clarification, role assignment, structures, time frames, etc. Having good open lines of communication was invaluable.  **PRO TIP:** We discovered if a member of your group has not hosted many calls on zoom, zoom will likely upgrade the call to more or unlimited minutes if they are the host. This got us through the entire week with a team of four.
+  
+ * Linking users and their posts
+   * We originally thought this would be relatively simple. This issue wasn't like a review on a restaurant where you pick a restaurant on the website then add a comment. That would be a little simpler. On clicking a a particular restaurant, we could target info such as a restaurant ID and tie the review to the restaurant via its ID. For a post, the application has to know who the user is and automatically tie the user to the post. Since HTTP is stateless we had to send the user some identifier from the backend that would be sent from the client with every preceding request. In our case, we use JWT  as the item sent by the server, stored on the client, and resent from the client to server on every request. A variety of methods could have been used to create a pseudo state allowing the server to track info pertaining to the client. This solution is similar to the first two steps of the three way handshake that TCP protocol uses when establishing connection. 
 
 
 ## Some Wanted/Needed Additions 
