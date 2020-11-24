@@ -25,7 +25,7 @@ http://team-orange4.herokuapp.com/
 
 ## MongoDB
 ### Why Mongodb
-We chose to use MongoDB, a schema-less NoSQL database, as our database because of how extremely flexible and forgiving it is. With less than a week to imagine, layout, and construct this full stack project, we knew there would be a lot of modifications along the way. Structural changes can be very tricky to handle with SQL base databases but with Mongo anything goes.  With the use of Mongoose and some models/schemas, we are quickly able to add a layer of data validation and structure onto or project without sacrificing an ease of use or flexibility. 
+We chose to use MongoDB, a schema-less NoSQL database, as our database because of how extremely **flexible and forgiving** it is. With less than a week to imagine, layout, and construct this full stack project, we knew there would be a lot of modifications along the way. Structural changes can be very tricky to handle with SQL base databases but with Mongo anything goes.  **With Mongoose and some models/schemas, we are quickly able to add a layer of data validation and structure** onto or project without sacrificing an ease of use or flexibility. 
 ### Users Collection Screenshot
 ![](images/users-collection-screenshot.png)
 
